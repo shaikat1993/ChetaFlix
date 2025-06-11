@@ -60,4 +60,4 @@ A production-grade, beautifully designed movie discovery app built with SwiftUI,
 
 1. **Clone the repository:**
    ```sh
-   git clone [https://github.com/shaikat1993/ChetaFlix.git](https://github.com/shaikat1993/ChetaFlix.git)
+   git clone https://github.com/shaikat1993/ChetaFlix.git
