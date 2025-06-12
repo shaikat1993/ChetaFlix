@@ -6,6 +6,17 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct AppFont: ViewModifier {
+    var size: CGFloat
+    var weight: String = "Regular"
+
+    func body(content: Content) -> some View {
+        content.font(.custom("Montserrat-\(weight)", size: size))
+    }
+}
+
 enum AppFontStyle{
     case largeTitle,
          title,
@@ -42,5 +53,14 @@ enum AppFontStyle{
         case .caption, .small:
             return "Light"
         }
+    }
+}
+
+
+// extending modifier for usability
+extension View {
+    func appFont(_ style: AppFontStyle) -> some View {
+        self.modifier(AppFont(size: style.size,
+                              weight: style.weight))
     }
 }
