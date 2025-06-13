@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  ChetaFlix
+
+  Created by Shaikat on 14.6.2025.
+  
+*/
+
+//onboarding
+onboarding_title_1 = "Suurin kansainvälinen ja kotimainen elokuvien suoratoisto";
+onboarding_subtitle_1 = "Löydä tuhansia elokuvia ja sarjoja ympäri maailmaa, kaikki yhdessä paikassa – milloin ja missä tahansa.";
+
+onboarding_title_2 = "Tarjoaa mainoksetonta katselua korkealla laadulla";
+onboarding_subtitle_2 = "Nauti suosikkielokuvistasi upealla laadulla ilman mainoksia keskeyttämässä katselukokemusta.";
+
+onboarding_title_3 = "Palvelumme kokoaa yhteen suosikkisarjasi";
+onboarding_subtitle_3 = "Ajattomista klassikoista uusimpiin hitteihin – seuraa ja katso kaikki suosikkisarjasi yhdessä sovelluksessa.";

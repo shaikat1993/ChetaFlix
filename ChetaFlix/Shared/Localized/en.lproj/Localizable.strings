@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  ChetaFlix
+
+  Created by Shaikat on 14.6.2025.
+  
+*/
+
+//onboarding
+onboarding_title_1 = "The biggest international and local film streaming";
+onboarding_subtitle_1 = "Discover thousands of movies and series from around the world, all in one place—anytime, anywhere.";
+
+onboarding_title_2 = "Offers ad-free viewing of high quality";
+onboarding_subtitle_2 = "Enjoy your favorite films in stunning quality, with no ads to interrupt your experience.";
+
+onboarding_title_3 = "Our service brings together your favorite series";
+onboarding_subtitle_3 = "From timeless classics to the latest hits, follow and binge all your favorite series in one app.";
