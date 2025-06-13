@@ -7,12 +7,25 @@
 
 import SwiftUI
 
-struct AppColors: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+struct AppColors {
+    //primary
+    static let primaryDark = Color("primaryDark")
+    static let primarySoft = Color("primarySoft")
+    static let blueAccent = Color("blueAccent")
+    
+    //secondary
+    static let secondaryGreen = Color("green")
+    static let secondaryOrange = Color("orange")
+    static let secondaryRed = Color("red")
+    
+    //text
+    static let textBlack = Color("black")
+    static let textDarkGrey = Color("darkGrey")
+    static let textGrey = Color("grey")
+    static let textWhiteGrey = Color("whiteGrey")
+    static let textWhite = Color("white")
+    
+    // Other
+    static let lineDark = Color("LineDark")
 }
 
-#Preview {
-    AppColors()
-}
