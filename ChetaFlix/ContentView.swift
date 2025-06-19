@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        // Inject the view model as needed
-        OnboardingView(viewModel: OnboardingViewModel())
+        RootAppView()
     }
 }
 
