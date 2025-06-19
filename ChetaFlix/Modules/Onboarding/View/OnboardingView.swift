@@ -9,23 +9,27 @@ import SwiftUI
 
 struct OnboardingView: View {
     @ObservedObject var viewModel: OnboardingViewModel
-
     private let imageAreaHeight: CGFloat = 330
-
+    
     var body: some View {
         ZStack {
             AppColors.primaryDark.ignoresSafeArea()
-
             VStack(spacing: 0) {
-                Image(viewModel.pages[viewModel.currentPage].imageName)
-                    .resizable()
-                    .scaledToFill()
-                    .clipped()
-                    .frame(height: imageAreaHeight)
-                    .padding(.top)
-
+                //swipable image area
+                TabView(selection: $viewModel.currentPage) {
+                    ForEach(Array(viewModel.pages.enumerated()), id: \.offset) { index,page in
+                        Image(page.imageName)
+                            .resizable()
+                            .scaledToFill()
+                            .ignoresSafeArea()
+                            .frame(height: imageAreaHeight)
+                            .padding(.top)
+                            .tag(index)
+                    }
+                }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                
                 Spacer()
-
+                
                 // Card always anchored at the bottom
                 OnboardingPageView(
                     page: viewModel.pages[viewModel.currentPage],
