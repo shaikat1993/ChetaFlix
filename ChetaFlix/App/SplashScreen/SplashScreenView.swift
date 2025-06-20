@@ -12,6 +12,7 @@ struct SplashScreenView: View {
     var onAnimationCompleted: () -> Void
 
     @State private var scale: CGFloat = 1.0
+    @State private var opacity: CGFloat = 0.7
 
     var body: some View {
         ZStack {
@@ -21,11 +22,30 @@ struct SplashScreenView: View {
                 .scaledToFit()
                 .frame(width: 138, height: 138, alignment: .center)
                 .scaleEffect(scale)
+                .opacity(opacity)
                 .onAppear {
-                    withAnimation(.easeInOut(duration: 1.5)) {
-                        scale = 1.4
+                    // Pop in with bounce
+                    withAnimation(.interpolatingSpring(stiffness: 120,
+                                                       damping: 9)) {
+                        scale = 1.25
                     }
-                    viewModel.startAnimation()
+                    // Settle to normal size
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.45) {
+                        withAnimation(.easeOut(duration: 0.25)){
+                            scale = 1.0
+                        }
+                    }
+                    // Fade and pop out, then trigger navigation
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.1) {
+                        withAnimation(.easeIn(duration: 1.0)) {
+                            opacity = 0
+                            scale = 1.5
+                        }
+                    }
+                    // Trigger navigation after fade
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+                        viewModel.startAnimation()
+                    }
                 }
         }
         .onChange(of: viewModel.isAnimationCompleted) { _, newValue in
